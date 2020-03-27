@@ -10,13 +10,19 @@ const todos = [
 
 // Use the `http` module create a server, and set it's parameter.
 const server = http.createServer((req, res) => {
-    res.setHeader('Content-Type', 'aplication/json');
-    res.setHeader('X-Powered-By', 'Node.js');
-    // We want o send data from data variable.
-    res.end(JSON.stringify({
-        success: true,
-        data: todos
-    }));
+    res.writeHead(400, {
+        'Content-Type' : 'aplication/json',
+        'X-Powered-By' : 'Node.js'
+      });
+    
+    // We want to send data from data variable.
+    res.end(
+        JSON.stringify({
+            success: false,
+            error: 'Please add email',
+            data: null
+        })
+    );
 });
 
 // Create a port number
