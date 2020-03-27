@@ -1,3 +1,8 @@
+# Node Http Module
+
+Node.js has a built-in moudle called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+
+```js
 // Import the library we'll be using.
 const http = require('http');
 
@@ -24,3 +29,4 @@ const PORT = 5000;
 
 // Call our server, by using the listen() method
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+```
