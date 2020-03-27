@@ -1,5 +1,7 @@
 # Node Http Module
 
+## The `http` module
+
 Node.js has a built-in moudle called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
 
 * As a Web Server `http.createServer()`
@@ -31,4 +33,27 @@ const PORT = 5000;
 
 // Call our server, by using the listen() method
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+```
+
+## 404 Status
+
+We can pass various status to our server for a response.
+
+```js
+const server = http.createServer((req, res) => {
+    res.writeHead(400, {
+        'Content-Type' : 'aplication/json',
+        'X-Powered-By' : 'Node.js'
+      });
+    
+    // We want to send data from data variable.
+    res.end(
+        JSON.stringify({
+            success: false,
+            error: 'Please add email',
+            data: null
+        })
+    );
+});
+
 ```
