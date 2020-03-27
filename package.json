@@ -1,0 +1,26 @@
+{
+  "name": "nodehttp",
+  "version": "1.0.0",
+  "description": "Learning http",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xboudsady/node-http.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Xayaseth Boudsady",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xboudsady/node-http/issues"
+  },
+  "homepage": "https://github.com/xboudsady/node-http#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
