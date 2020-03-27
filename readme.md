@@ -2,6 +2,8 @@
 
 Node.js has a built-in moudle called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
 
+* As a Web Server `http.createServer()`
+
 ```js
 // Import the library we'll be using.
 const http = require('http');
