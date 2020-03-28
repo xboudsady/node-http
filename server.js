@@ -14,13 +14,25 @@ const server = http.createServer((req, res) => {
         'Content-Type' : 'aplication/json',
         'X-Powered-By' : 'Node.js'
       });
+
+    // Create an empty array variable
+    let body = [];
+
+    // In the request, send data to the body, using Array.push()
+    req.on('data', chunk => {
+        body.push(chunk);
+    }).on('end', () => {
+        body = Buffer.concat(body).toString();
+        console.log(body);
+    });
+     
+    console.log(req.headers.authorization);
     
     // We want to send data from data variable.
     res.end(
         JSON.stringify({
-            success: false,
-            error: 'Please add email',
-            data: null
+            success: true,
+            data: todos
         })
     );
 });
