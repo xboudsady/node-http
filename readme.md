@@ -57,3 +57,23 @@ const server = http.createServer((req, res) => {
 });
 
 ```
+
+## Sending Data to the Server
+
+We can send data to the server as  JSON, by using the `request.on()` method, passing in `data` and `chunk` as a second parameter with a callback function to push the `chunk` of data into `body`.
+
+```js
+// Create an empty array variable
+let body = [];
+
+// In the request, send data to the body, using Array.push()
+req.on('data', chunk => {
+    body.push(chunk);
+}).on('end', () => {
+    body = Buffer.concat(body).toString();
+    console.log(body);
+});
+```
+
+![send-data-to-server-01](images/send-data-to-server-01.png)
+![send-data-to-server-02](images/send-data-to-server-02.png)
